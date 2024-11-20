@@ -14,7 +14,7 @@ const Balance = ({ provider, account }) => {
         fetchBalance();
     }, [provider, account]);
 
-    return <div>Balance: {balance} ETH</div>;
+    return <div className="flex justify-center align-middle  mb-16 mx-auto my-auto font-bold text-purple-700 text-2xl " >Balance: {balance} ETH</div>;
 };
 
 export default Balance;

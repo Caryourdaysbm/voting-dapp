@@ -21,13 +21,17 @@ const SendETH = ({ provider, account }) => {
     };
 
     return (
-        <div>
+        <div className=" flex flex-col align-middle text-center mx-auto bg-gray-200 rounded-lg max-w-[90%] py-7 px-4 ">
+            <h2 className=" text-xl font-bold text-purple-800" >Send Ethereum (Sepolia)</h2>
+
             <input
                 placeholder="Recipient Address"
                 value={recipient}
                 onChange={(e) => setRecipient(e.target.value)}
                 className="border p-2 m-2"
             />
+            <div>
+                
             <input
                 placeholder="Amount in ETH"
                 value={amount}
@@ -37,6 +41,7 @@ const SendETH = ({ provider, account }) => {
             <button onClick={sendETH} className="bg-green-500 text-white py-2 px-4 rounded">
                 Send ETH
             </button>
+            </div>
         </div>
     );
 };

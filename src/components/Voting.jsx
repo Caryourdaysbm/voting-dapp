@@ -18,7 +18,8 @@ const Voting = ({ provider }) => {
     };
 
     return (
-        <div>
+        <div className=" align-middle text-center mx-auto mt-16  bg-gray-200 rounded-lg max-w-[90%] py-7 px-10">
+            <h2 className=" text-xl font-bold text-purple-800" >Vote for a Proposal</h2>
             <select
                 value={proposal}
                 onChange={(e) => setProposal(e.target.value)}

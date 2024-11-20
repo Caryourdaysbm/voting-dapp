@@ -9,7 +9,7 @@ const App = () => {
     const { connectWallet, account, provider } = useWallet();
 
     return (
-        <div className="p-10">
+        <div className=" flex flex-col justify-center align-middle  md:max-w-[80%] my-auto mx-auto  ">
             <WalletConnection connectWallet={connectWallet} account={account} />
             {provider && (
                 <>
