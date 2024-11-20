@@ -1,12 +1,16 @@
 import { ethers } from "ethers";
 
-const contractAddress = "0xB2E1185468e57A801a54162F27725CbD5B0EB4a6";
-const contractABI = [
-    "function vote(uint proposal) public",
-    // Add other ABI items if needed
+const CONTRACT_ADDRESS = "0xB2E1185468e57A801a54162F27725CbD5B0EB4a6";
+const CONTRACT_ABI = [
+    {
+        "inputs": [{ "internalType": "uint8", "name": "proposal", "type": "uint8" }],
+        "name": "vote",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function",
+    },
 ];
 
 export const getVotingContract = (provider) => {
-    const signer = provider.getSigner();
-    return new ethers.Contract(contractAddress, contractABI, signer);
+    return new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, provider.getSigner());
 };
