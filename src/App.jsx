@@ -26,7 +26,7 @@ const App = () => {
 
         </div>
       ) : (
-        <div className="flex flex-col justify-center align-middle md:max-w-[80%] my-auto mx-auto my-4 font-bold text-purple-700 text-xl">
+        <div className="flex justify-center align-middle max-w-[99%]  mt-16 mx-auto bg-purple-700 text-white text-wrap py-2 px-4 rounded">
           {account ? `Connected: ${account}` : "MetaMask not installed"}
         </div>
       )}
