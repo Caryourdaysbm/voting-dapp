@@ -5,6 +5,8 @@ export const useWallet = () => {
     const [account, setAccount] = useState(null);
     const [provider, setProvider] = useState(null);
     const [isWalletInstalled, setIsWalletInstalled] = useState(false);
+    const [loading, setLoading] = useState(false);
+
 
     useEffect(() => {
         // Check if window.ethereum is available (MetaMask is installed)
@@ -23,13 +25,18 @@ export const useWallet = () => {
 
         try {
             // Request accounts from MetaMask (this will pop up the MetaMask dialog to connect)
+            setLoading(true);
+            console.log(loading)
             const accounts = await window.ethereum.request({
                 method: "eth_requestAccounts",
             });
 
             if (accounts.length > 0) {
+                setLoading(false);
+                console.log(loading)
                 setAccount(accounts[0]); // Set the selected account
             } else {
+                setLoading(false);
                 console.log("No accounts selected");
             }
 
@@ -41,5 +48,5 @@ export const useWallet = () => {
         }
     };
 
-    return { account, provider, connectWallet, isWalletInstalled };
+    return { account, provider, connectWallet, isWalletInstalled, loading };
 };

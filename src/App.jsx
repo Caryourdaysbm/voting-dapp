@@ -5,7 +5,7 @@ import SendETH from "./components/SendETH";
 import Voting from "./components/Voting";
 
 const App = () => {
-  const { account, provider, connectWallet, isWalletInstalled } = useWallet();
+  const { account, provider, connectWallet, isWalletInstalled, loading} = useWallet();
 
   return (
     <div className="flex flex-col justify-center align-middle md:max-w-[80%] my-auto mx-auto">
@@ -15,12 +15,17 @@ const App = () => {
             Connect your wallet to get started. <br /> 
           </p>
 
-          <button
+          { loading ? ( <button
+            disabled
+            className="flex flex-col justify-center align-middle  md:max-w-[80%] mx-auto  bg-purple-300 text-white py-2 px-4 rounded my-4 "
+          >
+            Connecting...
+          </button>) : ( <button
             onClick={connectWallet}
             className="flex flex-col justify-center align-middle  md:max-w-[80%] mx-auto  bg-purple-500 text-white py-2 px-4 rounded my-4 "
           >
             Connect Wallet
-          </button>
+          </button>)}
           <p className="text-center text-red-600">Make sure you're are on
           your desired MetaMask account{" "}</p>
 

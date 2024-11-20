@@ -46,7 +46,7 @@ const SendETH = ({ provider, account }) => {
             onChange={(e) => setAmount(e.target.value)}
             className="border p-2 m-2"
         />
-        {loading ? <button disabled className="bg-green-500 text-white py-2 px-4 rounded">
+        {loading ? <button disabled className="bg-green-300 text-white py-2 px-4 rounded">
             Sending...
         </button> : <button onClick={sendETH} className="bg-green-500 text-white py-2 px-4 rounded">
             Send ETH
