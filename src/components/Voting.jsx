@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { getVotingContract } from "../utils/votingContract";
-import { getProvider } from "../utils/provider";
 
 const Voting = ({ provider, account }) => {
     const [proposal, setProposal] = useState("");
@@ -12,7 +11,7 @@ const Voting = ({ provider, account }) => {
 
         try {
             // Get the provider and contract
-            const provider = getProvider();
+            
             const contract = getVotingContract(provider);
 
             // Start the transaction by sending a vote
